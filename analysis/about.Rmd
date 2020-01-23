@@ -7,4 +7,4 @@ editor_options:
   chunk_output_type: console
 ---
 
-Describe your project.
+Modeling heteroplasmy data for 700 samples from Freeze 5. 

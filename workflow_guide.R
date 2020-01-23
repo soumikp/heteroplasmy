@@ -4,7 +4,7 @@ wflow_start("heteroplasmy")
 wflow_build() ##
 wflow_publish() ##
 wflow_publish("analysis/*", "Start my new project")
-wflow_status() ##
+
 wflow_publish(c("analysis/index.Rmd", "analysis/about.Rmd", "analysis/license.Rmd"),
               "Publish the initial files for myproject")
 wflow_use_github("soumikp")
@@ -14,6 +14,12 @@ wflow_build() ##
 wflow_publish() ##
 wflow_publish(c("data/sample.txt"),
               "Add dataset")
-wflow_git_push()
+
 wflow_publish(c("workflow_guide.R"),
               "workflow guide R code added")
+wflow_git_push()
+
+wflow_status() 
+wflow_build()
+wflow_publish(message = "ready to start work", all = TRUE)
+wflow_git_push() 
