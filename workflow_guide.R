@@ -15,4 +15,5 @@ wflow_publish() ##
 wflow_publish(c("data/sample.txt"),
               "Add dataset")
 wflow_git_push()
-wflow_publish()
+wflow_publish(c("workflow_guide.R"),
+              "workflow guide R code added")
