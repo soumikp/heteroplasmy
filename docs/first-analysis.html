@@ -394,7 +394,7 @@ div.section {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -403,7 +403,7 @@ div.section {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -415,7 +415,7 @@ div.section {
 <strong>Last updated:</strong> 2020-01-23
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>heteroplasmy/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -431,12 +431,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
@@ -503,10 +503,10 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomsoumikpheteroplasmytree413823951aa5999449ec039e521cea0c82cd396dtargetblank4138239a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/soumikp/heteroplasmy/tree/413823951aa5999449ec039e521cea0c82cd396d" target="_blank">4138239</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomsoumikpheteroplasmytree258c4b7569e3ac41c8a7a31672b14adf5d567138targetblank258c4b7a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/soumikp/heteroplasmy/tree/258c4b7569e3ac41c8a7a31672b14adf5d567138" target="_blank">258c4b7</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomsoumikpheteroplasmytree413823951aa5999449ec039e521cea0c82cd396dtargetblank4138239a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomsoumikpheteroplasmytree258c4b7569e3ac41c8a7a31672b14adf5d567138targetblank258c4b7a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -517,6 +517,9 @@ Ignored files:
 
 Untracked files:
     Untracked:  analysis/previous-work.Rmd
+
+Unstaged changes:
+    Modified:   analysis/first-analysis.Rmd
 
 </code></pre>
 <p>
@@ -555,6 +558,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/soumikp/heteroplasmy/5d5b9ee8474468c0c662e98b7f058a89801370e0/docs/first-analysis.html" target="_blank">5d5b9ee</a>
+</td>
+<td>
+soumikp
+</td>
+<td>
+2020-01-23
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -666,6 +686,35 @@ Add my first analysis
 </div>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
+<p>Get 700 randomly chosen individuals with count data for 16569 bases.</p>
+<pre class="r"><code>suppressMessages(require(tidyverse))
+data &lt;- read_tsv(&quot;~/Google Drive - Umich/mtDNA/phase5/other/heteroplasmy/sample.txt&quot;)</code></pre>
+<pre><code>Parsed with column specification:
+cols(
+  nwdid = col_character(),
+  pos = col_double(),
+  NumA = col_double(),
+  NumC = col_double(),
+  NumG = col_double(),
+  NumT = col_double()
+)</code></pre>
+<pre class="r"><code>str(data)</code></pre>
+<pre><code>Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    11598300 obs. of  6 variables:
+ $ nwdid: chr  &quot;NWD103855&quot; &quot;NWD104011&quot; &quot;NWD105426&quot; &quot;NWD110084&quot; ...
+ $ pos  : num  1 1 1 1 1 1 1 1 1 1 ...
+ $ NumA : num  0 0 0 0 0 0 0 1 0 0 ...
+ $ NumC : num  0 0 0 0 1 1 0 0 0 0 ...
+ $ NumG : num  1777 2843 1177 2977 1405 ...
+ $ NumT : num  0 0 0 0 0 0 0 1 0 1 ...
+ - attr(*, &quot;spec&quot;)=
+  .. cols(
+  ..   nwdid = col_character(),
+  ..   pos = col_double(),
+  ..   NumA = col_double(),
+  ..   NumC = col_double(),
+  ..   NumG = col_double(),
+  ..   NumT = col_double()
+  .. )</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -689,15 +738,26 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] workflowr_1.6.0
+[1] forcats_0.4.0   stringr_1.4.0   dplyr_0.8.3     purrr_0.3.3    
+[5] readr_1.3.1     tidyr_1.0.0     tibble_2.1.3    ggplot2_3.2.1  
+[9] tidyverse_1.3.0
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.3      rprojroot_1.3-2 digest_0.6.23   later_1.0.0    
- [5] R6_2.4.1        backports_1.1.5 git2r_0.26.1    magrittr_1.5   
- [9] evaluate_0.14   stringi_1.4.3   rlang_0.4.2     fs_1.3.1       
-[13] promises_1.1.0  whisker_0.4     rmarkdown_2.0   tools_3.6.2    
-[17] stringr_1.4.0   glue_1.3.1      httpuv_1.5.2    xfun_0.11      
-[21] yaml_2.2.0      compiler_3.6.2  htmltools_0.4.0 knitr_1.26     </code></pre>
+ [1] tidyselect_0.2.5 xfun_0.11        haven_2.2.0      lattice_0.20-38 
+ [5] colorspace_1.4-1 vctrs_0.2.1      generics_0.0.2   htmltools_0.4.0 
+ [9] yaml_2.2.0       rlang_0.4.2      later_1.0.0      pillar_1.4.3    
+[13] withr_2.1.2      glue_1.3.1       DBI_1.1.0        dbplyr_1.4.2    
+[17] modelr_0.1.5     readxl_1.3.1     lifecycle_0.1.0  munsell_0.5.0   
+[21] gtable_0.3.0     workflowr_1.6.0  cellranger_1.1.0 rvest_0.3.5     
+[25] evaluate_0.14    knitr_1.26       httpuv_1.5.2     fansi_0.4.0     
+[29] broom_0.5.3      Rcpp_1.0.3       promises_1.1.0   backports_1.1.5 
+[33] scales_1.1.0     jsonlite_1.6     fs_1.3.1         hms_0.5.2       
+[37] digest_0.6.23    stringi_1.4.3    grid_3.6.2       rprojroot_1.3-2 
+[41] cli_2.0.0        tools_3.6.2      magrittr_1.5     lazyeval_0.2.2  
+[45] crayon_1.3.4     whisker_0.4      pkgconfig_2.0.3  zeallot_0.1.0   
+[49] xml2_1.2.2       reprex_0.3.0     lubridate_1.7.4  rstudioapi_0.10 
+[53] assertthat_0.2.1 rmarkdown_2.0    httr_1.4.1       R6_2.4.1        
+[57] nlme_3.1-142     git2r_0.26.1     compiler_3.6.2  </code></pre>
 </div>
 </div>
 

@@ -9,7 +9,11 @@ editor_options:
 
 # Introduction
 
-```{r}
+Get 700 randomly chosen individuals with count data for 16569 bases. 
 
+```{r}
+suppressMessages(require(tidyverse))
+data <- read_tsv("~/Google Drive - Umich/mtDNA/phase5/other/heteroplasmy/sample.txt")
+str(data)
 ```
 

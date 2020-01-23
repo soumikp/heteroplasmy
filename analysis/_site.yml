@@ -5,10 +5,10 @@ navbar:
   left:
   - text: Home
     href: index.html
-  - text: About
-    href: about.html
   - text: Previous work
     href: previous-work.html
+  - text: Current work
+    href: first-analysis.html
   right:
   - icon: fa-github
     text: Source code
