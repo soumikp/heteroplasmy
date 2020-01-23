@@ -14,5 +14,5 @@ For previous work, click on [link](previous-work.html)
 Click on this [link](first-analysis.html) to see current work. 
 
 ```{r, echo = FALSE}
-print(Sys.time())
+paste("Last updated on: ", Sys.time())
 ```
