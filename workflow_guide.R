@@ -21,5 +21,5 @@
 
 wflow_status() 
 wflow_build()
-wflow_publish(message = "ready to start work", all = TRUE)
+wflow_publish(message = "heteroplasmic sites found", all = TRUE)
 wflow_git_push() 

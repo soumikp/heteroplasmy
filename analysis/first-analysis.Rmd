@@ -1,7 +1,7 @@
 ---
 title: "first-analysis"
-author: "soumikp"
-date: "2020-01-23"
+author: "Soumik Purkayastha"
+date: "01/23/2020"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
@@ -9,11 +9,38 @@ editor_options:
 
 # Introduction
 
-Get 700 randomly chosen individuals with count data for 16569 bases. 
-
-```{r}
+```{r basic, echo = FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
 suppressMessages(require(tidyverse))
-data <- read_tsv("~/Google Drive - Umich/mtDNA/phase5/other/heteroplasmy/sample.txt")
-str(data)
 ```
+
+Get 700 randomly chosen individuals with count data for 16569 bases. A typical individual has a 4 * 16569 matrix of count data. 
+
+```{r, echo = FALSE, cache=TRUE}
+data <- suppressMessages(read_tsv("~/Google Drive - Umich/mtDNA/phase5/other/heteroplasmy/sample.txt"))
+```
+
+```{r 2, echo = FALSE}
+id <- unique(data$nwdid)
+
+p.id <- sample(id, 1)
+
+f <- function(x){
+  x <- x/sum(x)
+  ifelse(max(x)<0.96, 1, 0)
+}
+
+hetero.site <- matrix(0, ncol = 16569, nrow = 700)
+
+# for(i in 1:700){
+#   p.id <- id[i]
+#   for(j in 1:16569){
+#     x <- as.numeric((data %>% filter(nwdid == p.id, pos == j))[3:6])
+#     x <- x/sum(x)
+#     hetero.site[i,j] <- ifelse(max(x)<0.96, 1, 0)
+#   }
+# }
+```
+
+
 
