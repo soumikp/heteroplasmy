@@ -314,7 +314,7 @@ div.section {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -323,7 +323,7 @@ div.section {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -335,7 +335,7 @@ div.section {
 <strong>Last updated:</strong> 2020-01-23
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>heteroplasmy/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -347,7 +347,7 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <hr>
 </div>
 <div id="checks" class="tab-pane fade">
-<div class="panel-group" id="workflowr-checks">
+<div id="workflowr-checks" class="panel-group">
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
@@ -363,167 +363,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongobjectspresent"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>Environment:</strong> objects present </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
 </p>
 </div>
-<div id="strongEnvironmentstrongobjectspresent" class="panel-collapse collapse">
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
 <div class="panel-body">
-
-<p>
-The global environment had objects present when the code in the R Markdown file was run. These objects can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment. Use <code>wflow_publish</code> or <code>wflow_build</code> to ensure that the code is always run in an empty environment.
-</p>
-<p>
-The following objects were defined in the global environment when these results were created:
-</p>
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th style="text-align:left;">
-Name
-</th>
-<th style="text-align:left;">
-Class
-</th>
-<th style="text-align:left;">
-Size
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-basic.detect
-</td>
-<td style="text-align:left;">
-function
-</td>
-<td style="text-align:left;">
-10.7 Kb
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-d
-</td>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-80 bytes
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-data
-</td>
-<td style="text-align:left;">
-spec_tbl_df;tbl_df;tbl;data.frame
-</td>
-<td style="text-align:left;">
-531 Mb
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-data.heatmap
-</td>
-<td style="text-align:left;">
-data.frame
-</td>
-<td style="text-align:left;">
-2 Mb
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-f
-</td>
-<td style="text-align:left;">
-function
-</td>
-<td style="text-align:left;">
-5.9 Kb
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-id
-</td>
-<td style="text-align:left;">
-character
-</td>
-<td style="text-align:left;">
-49.3 Kb
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-n
-</td>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-1.6 Kb
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-output
-</td>
-<td style="text-align:left;">
-matrix
-</td>
-<td style="text-align:left;">
-518.5 Kb
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-p.id
-</td>
-<td style="text-align:left;">
-character
-</td>
-<td style="text-align:left;">
-120 bytes
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-prop
-</td>
-<td style="text-align:left;">
-function
-</td>
-<td style="text-align:left;">
-11.4 Kb
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-x
-</td>
-<td style="text-align:left;">
-integer
-</td>
-<td style="text-align:left;">
-64.8 Kb
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-y
-</td>
-<td style="text-align:left;">
-character
-</td>
-<td style="text-align:left;">
-304 bytes
-</td>
-</tr>
-</tbody>
-</table>
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
 </div>
 </div>
 </div>
@@ -578,10 +423,10 @@ character
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomsoumikpheteroplasmytree5bd29438b330ab4442c78d1ce3a36af79af6e25ctargetblank5bd2943a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/soumikp/heteroplasmy/tree/5bd29438b330ab4442c78d1ce3a36af79af6e25c" target="_blank">5bd2943</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomsoumikpheteroplasmytreefa83f7cc05764ad22c0c1fa08a6105612bacb572targetblankfa83f7ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/soumikp/heteroplasmy/tree/fa83f7cc05764ad22c0c1fa08a6105612bacb572" target="_blank">fa83f7c</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomsoumikpheteroplasmytree5bd29438b330ab4442c78d1ce3a36af79af6e25ctargetblank5bd2943a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomsoumikpheteroplasmytreefa83f7cc05764ad22c0c1fa08a6105612bacb572targetblankfa83f7ca" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -589,10 +434,20 @@ Great! You are using Git for version control. Tracking code development and conn
 <pre><code>
 Ignored files:
     Ignored:    .DS_Store
-    Ignored:    analysis/site_libs/
+    Ignored:    .RData
+    Ignored:    .Rhistory
+    Ignored:    analysis/first-analysis_cache/
 
 Untracked files:
     Untracked:  analysis/previous-work.Rmd
+    Untracked:  code/heteroSites.R
+    Untracked:  densityPlots/
+    Untracked:  output/heteroData.csv
+    Untracked:  output/heteroSites.RData
+
+Unstaged changes:
+    Modified:   analysis/first-analysis.Rmd
+    Modified:   workflow_guide.R
 
 </code></pre>
 <p>
@@ -631,6 +486,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/soumikp/heteroplasmy/660f408d435b2b93e4fd27a239999c91df1d461b/docs/index.html" target="_blank">660f408</a>
+</td>
+<td>
+soumikp
+</td>
+<td>
+2020-01-23
+</td>
+<td>
+heteroplasmic sites found
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -844,7 +716,7 @@ Start workflowr project.
 </div>
 <p>For previous work, click on <a href="previous-work.html">link</a></p>
 <p>Click on this <a href="first-analysis.html">link</a> to see current work.</p>
-<pre><code>[1] &quot;Last updated on:  2020-01-23 11:35:48&quot;</code></pre>
+<pre><code>[1] &quot;Last updated on:  2020-01-23 21:06:41&quot;</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -858,7 +730,7 @@ Platform: x86_64-apple-darwin15.6.0 (64-bit)
 Running under: macOS Catalina 10.15.2
 
 Matrix products: default
-BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
 LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
 
 locale:
@@ -867,25 +739,14 @@ locale:
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
-other attached packages:
- [1] workflowr_1.6.0  hrbrthemes_0.6.0 forcats_0.4.0    stringr_1.4.0    dplyr_0.8.3      purrr_0.3.3     
- [7] readr_1.3.1      tidyr_1.0.0      tibble_2.1.3     ggplot2_3.2.1    tidyverse_1.3.0 
-
 loaded via a namespace (and not attached):
- [1] nlme_3.1-142      fs_1.3.1          lubridate_1.7.4   httr_1.4.1        rprojroot_1.3-2   tools_3.6.2      
- [7] backports_1.1.5   utf8_1.1.4        R6_2.4.1          DBI_1.1.0         lazyeval_0.2.2    colorspace_1.4-1 
-[13] withr_2.1.2       tidyselect_0.2.5  processx_3.4.1    curl_4.3          compiler_3.6.2    git2r_0.26.1     
-[19] extrafontdb_1.0   cli_2.0.0         rvest_0.3.5       xml2_1.2.2        plotly_4.9.1      labeling_0.3     
-[25] scales_1.1.0      callr_3.4.0       systemfonts_0.1.1 digest_0.6.23     rmarkdown_2.0     pkgconfig_2.0.3  
-[31] htmltools_0.4.0   extrafont_0.17    dbplyr_1.4.2      fastmap_1.0.1     highr_0.8         htmlwidgets_1.5.1
-[37] rlang_0.4.2       readxl_1.3.1      rstudioapi_0.10   shiny_1.4.0       farver_2.0.1      generics_0.0.2   
-[43] jsonlite_1.6      crosstalk_1.0.0   magrittr_1.5      Rcpp_1.0.3        munsell_0.5.0     fansi_0.4.0      
-[49] gdtools_0.2.1     lifecycle_0.1.0   whisker_0.4       stringi_1.4.3     yaml_2.2.0        grid_3.6.2       
-[55] promises_1.1.0    crayon_1.3.4      lattice_0.20-38   haven_2.2.0       hms_0.5.2         zeallot_0.1.0    
-[61] knitr_1.26        ps_1.3.0          pillar_1.4.3      reprex_0.3.0      glue_1.3.1        evaluate_0.14    
-[67] getPass_0.2-2     data.table_1.12.8 modelr_0.1.5      vctrs_0.2.1       httpuv_1.5.2      Rttf2pt1_1.3.8   
-[73] cellranger_1.1.0  gtable_0.3.0      assertthat_0.2.1  xfun_0.11         mime_0.8          xtable_1.8-4     
-[79] broom_0.5.3       later_1.0.0       rsconnect_0.8.16  viridisLite_0.3.0</code></pre>
+ [1] workflowr_1.6.0 Rcpp_1.0.3      rprojroot_1.3-2 digest_0.6.23  
+ [5] later_1.0.0     R6_2.4.1        backports_1.1.5 git2r_0.26.1   
+ [9] magrittr_1.5    evaluate_0.14   stringi_1.4.5   rlang_0.4.2    
+[13] fs_1.3.1        promises_1.1.0  whisker_0.4     rmarkdown_2.1  
+[17] tools_3.6.2     stringr_1.4.0   glue_1.3.1      httpuv_1.5.2   
+[21] xfun_0.12       yaml_2.2.0      compiler_3.6.2  htmltools_0.4.0
+[25] knitr_1.27     </code></pre>
 </div>
 
 

@@ -21,5 +21,6 @@
 
 wflow_status() 
 wflow_build()
-wflow_publish(message = "heteroplasmic sites found", all = TRUE)
+wflow_publish(message = "density at heteroplasmic hotspots seen", all = TRUE)
 wflow_git_push() 
+  

@@ -64,12 +64,53 @@ ggplot(hetero.sites) +
 
 
 
-sites <- which(hetero.sites>100)
+sites <- which(hetero.sites$Y>100)
 ```
 
-```{r chunk2, echo = FALSE}
+# Distribution of bases at heteroplasmy hotspots
 
+* For any heteroplasmy hotspot, select all 'heteroplasmic individuals'. 
+* For each person, calculate proportion of each of the 4 bases. 
+* For each base, get density plot of the calculated proportions. 
+* Generate overlaid version of the 4 density plots obtained.
+
+An example is given below. 
+
+```{r chunk2, echo = FALSE, cache = FALSE}
+prop <- function(x){
+  return(x/sum(x))
+}
+
+site.id <- sample(sites, 1)
+
+hetero.people <- hetero.flag[(hetero.flag[,(site.id + 1)] == 1),1]
+
+dist.data <- suppressMessages(inner_join(data %>% filter(pos == site.id), hetero.people))
+
+prop.data <- t(apply(dist.data[,c(3:6)], 1, prop))
+
+dist.data <- dist.data %>% add_column(PropA = prop.data[,1], 
+                                      PropC = prop.data[,2],
+                                      PropG = prop.data[,3],
+                                      PropT = prop.data[,4])
+
+dist.data <- pivot_longer(dist.data[,-c(3:6)], 
+             cols = c(PropA, PropC, PropG, PropT), 
+             names_to = "Base")
+
+dist.data$Base <- ifelse(dist.data$Base == "PropA", "A", 
+                         ifelse(dist.data$Base == "PropC", "C",
+                                ifelse(dist.data$Base == "PropT", "T","G")))
+
+
+ggplot(dist.data, 
+       aes(x = value, fill = Base)) + 
+         geom_density(alpha = 0.4) + 
+  theme_bw() + 
+  labs(title = paste("Overlaid density plots for each base for heteroplasmy hotspot", site.id))
 ```
+
+
 
 
 
