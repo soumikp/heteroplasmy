@@ -1,5 +1,5 @@
 ---
-title: "first-analysis"
+title: "Modeling heterolasmy in mtDNA"
 author: "Soumik Purkayastha"
 date: "01/23/2020"
 output: workflowr::wflow_html
@@ -7,39 +7,68 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Introduction
+# Data processing
+
+* Get 700 randomly chosen individuals with count data for 16569 bases. 
+* A typical individual has a 4 * 16569 matrix of count data. 
+* Transform count matrix to proportion matrix. 
+* **Current definition of heteroplasmy: most prevalent base has frequency $<96\%$**
 
 ```{r basic, echo = FALSE}
 knitr::opts_chunk$set(autodep = TRUE)
 suppressMessages(require(tidyverse))
 ```
 
-Get 700 randomly chosen individuals with count data for 16569 bases. A typical individual has a 4 * 16569 matrix of count data. 
+# Searching for heteroplasmy hotspots
 
-```{r, echo = FALSE, cache=TRUE}
+* For each of the 16569 bases, get individual level information.
+* Get count of how many individuals exhibit heterplasmy at that site. 
+* Set cut-off of $>100$ individuals to classify a site as a **heteroplasmy hotspot**. 
+* Plot of heteroplasmy hotspots given below. 
+
+
+```{r chunk1, echo = FALSE, cache=TRUE}
 data <- suppressMessages(read_tsv("~/Google Drive - Umich/mtDNA/phase5/other/heteroplasmy/sample.txt"))
-```
-
-```{r 2, echo = FALSE}
-id <- unique(data$nwdid)
-
-p.id <- sample(id, 1)
 
 f <- function(x){
   x <- x/sum(x)
   ifelse(max(x)<0.96, 1, 0)
 }
 
-hetero.site <- matrix(0, ncol = 16569, nrow = 700)
+data$pos <- as.factor(data$pos)
+data$nwdid <- as.factor(data$nwdid )
 
-# for(i in 1:700){
-#   p.id <- id[i]
-#   for(j in 1:16569){
-#     x <- as.numeric((data %>% filter(nwdid == p.id, pos == j))[3:6])
-#     x <- x/sum(x)
-#     hetero.site[i,j] <- ifelse(max(x)<0.96, 1, 0)
-#   }
-# }
+hetero.flag <- data %>% group_by(nwdid, pos) %>% summarise(hetero.flag = f(c(NumA, NumC, NumG, NumT)))
+
+hetero.flag <- spread(hetero.flag, pos, hetero.flag)
+
+hetero.sites <- apply(hetero.flag[,-1], 2, sum)
+
+hetero.sites <- data.frame(Y = hetero.sites, 
+                           X = 1:16569)
+
+point.x <- hetero.sites$X[hetero.sites$Y>100]
+point.y <- rep(0, sum(hetero.sites$Y>100))
+
+ggplot(hetero.sites) + 
+  geom_line(aes(x= X, y = Y)) + 
+  theme_bw() +
+  theme(legend.position = "none") + 
+  geom_hline(yintercept = 100, col = "RED", linetype = 2) + 
+  geom_point(data = data.frame(point.x, point.y), 
+             aes(x = point.x, y = point.y, col="RED")) + 
+  labs(title = "Count of individuals exhibiting heteroplasmy", 
+       subtitle = "Dots on X-axis show bases where >100 people exhibit heteroplasmy") + 
+  xlab("Base position") + 
+  ylab("Number of individuals")
+
+
+
+sites <- which(hetero.sites>100)
+```
+
+```{r chunk2, echo = FALSE}
+
 ```
 
 
