@@ -15,8 +15,9 @@ editor_options:
 * **Current definition of heteroplasmy: most prevalent base has frequency $<96\%$**
 
 ```{r basic, echo = FALSE}
-knitr::opts_chunk$set(autodep = TRUE)
+#knitr::opts_chunk$set(autodep = TRUE)
 suppressMessages(require(tidyverse))
+
 ```
 
 # Searching for heteroplasmy hotspots
@@ -26,8 +27,12 @@ suppressMessages(require(tidyverse))
 * Set cut-off of $>100$ individuals to classify a site as a **heteroplasmy hotspot**. 
 * Plot of heteroplasmy hotspots given below. 
 
+```{r pressure, echo=FALSE, fig.cap="A caption", out.width = '100%'}
+knitr::include_graphics("/Users/soumikp/Google Drive - Umich/mtDNA/heteroplasmy/docs/figure/first-analysis.Rmd")
+```
 
-```{r chunk1, echo = FALSE, cache=TRUE}
+
+```{r chunk1, echo = FALSE, eval = FALSE}
 data <- suppressMessages(read_tsv("~/Google Drive - Umich/mtDNA/phase5/other/heteroplasmy/sample.txt"))
 
 f <- function(x){
@@ -36,7 +41,7 @@ f <- function(x){
 }
 
 data$pos <- as.factor(data$pos)
-data$nwdid <- as.factor(data$nwdid )
+data$nwdid <- as.factor(data$nwdid)
 
 hetero.flag <- data %>% group_by(nwdid, pos) %>% summarise(hetero.flag = f(c(NumA, NumC, NumG, NumT)))
 
@@ -62,8 +67,6 @@ ggplot(hetero.sites) +
   xlab("Base position") + 
   ylab("Number of individuals")
 
-
-
 sites <- which(hetero.sites$Y>100)
 ```
 
@@ -76,7 +79,9 @@ sites <- which(hetero.sites$Y>100)
 
 An example is given below. 
 
-```{r chunk2, echo = FALSE, cache = FALSE}
+![a](chunk2-1.png)
+
+```{r chunk2, echo = FALSE, eval = FALSE}
 prop <- function(x){
   return(x/sum(x))
 }
@@ -109,6 +114,8 @@ ggplot(dist.data,
   theme_bw() + 
   labs(title = paste("Overlaid density plots for each base for heteroplasmy hotspot", site.id))
 ```
+
+The cluster is now running a Shiny app which gives us the above figure for each position, for all the individuals in the dataset. [Click here for more](http://shiny.sph.umich.edu/soumikp)
 
 
 
