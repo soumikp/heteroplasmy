@@ -1,7 +1,7 @@
 ---
 title: "Modeling heterolasmy in mtDNA"
 author: "Soumik Purkayastha"
-date: "01/23/2020"
+date: "03/04/2020"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
@@ -27,12 +27,9 @@ suppressMessages(require(tidyverse))
 * Set cut-off of $>100$ individuals to classify a site as a **heteroplasmy hotspot**. 
 * Plot of heteroplasmy hotspots given below. 
 
-```{r pressure, echo=FALSE, fig.cap="A caption", out.width = '100%'}
-knitr::include_graphics("/Users/soumikp/Google Drive - Umich/mtDNA/heteroplasmy/docs/figure/first-analysis.Rmd")
-```
 
 
-```{r chunk1, echo = FALSE, eval = FALSE}
+```{r chunk1, echo = FALSE, eval = TRUE, cache=TRUE}
 data <- suppressMessages(read_tsv("~/Google Drive - Umich/mtDNA/phase5/other/heteroplasmy/sample.txt"))
 
 f <- function(x){
@@ -79,9 +76,7 @@ sites <- which(hetero.sites$Y>100)
 
 An example is given below. 
 
-![a](chunk2-1.png)
-
-```{r chunk2, echo = FALSE, eval = FALSE}
+```{r chunk2, echo = FALSE, cache = TRUE}
 prop <- function(x){
   return(x/sum(x))
 }
@@ -115,7 +110,7 @@ ggplot(dist.data,
   labs(title = paste("Overlaid density plots for each base for heteroplasmy hotspot", site.id))
 ```
 
-The cluster is now running a Shiny app which gives us the above figure for each position, for all the individuals in the dataset. [Click here for more](http://shiny.sph.umich.edu/soumikp)
+The cluster is now running a Shiny app which gives us the above figure for each position, for all the individuals in the dataset. [Click here to load the app.](http://shiny.sph.umich.edu/soumikp)
 
 
 
